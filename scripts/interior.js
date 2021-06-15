@@ -1,12 +1,12 @@
 import { getInterior, setInterior } from "./database.js"
 
-const styles = getInterior()
+const inter = getInterior()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "type") {
-            //window.alert(`User chose type ${event.target.value}`)
+        if (event.target.name === "interior") {
+         //   window.alert(`User chose ${event.target.value}`)
             setInterior(parseInt(event.target.value))
         }
     }
@@ -16,9 +16,9 @@ export const interior = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
-    const listItems = interior.map(interior => {
+    const listItems = inter.map(interior => {
         return `<li>
-            <input type="radio" name="style" value="${style.id}" /> ${style.style}
+            <input type="radio" name="interior" value="${interior.id}" /> ${interior.type}
         </li>`
     })
     html += listItems.join("")
@@ -26,4 +26,3 @@ export const interior = () => {
 
     return html
 }
-© 2021 GitH

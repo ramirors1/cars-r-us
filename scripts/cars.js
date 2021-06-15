@@ -1,9 +1,9 @@
-import { paintcolor } from "./paintcolor.js"
+import { paintColor } from "./paintcolor.js"
 import { interior } from "./interior.js"
 import { technology } from "./technology.js"
 import { wheels } from "./wheels.js"
-//import { orders } from "./orders.js"
-//import { addCustomOrder } from "./database.js"
+import { orders } from "./orders.js"
+import { addCustomOrder } from "./database.js"
 
 document.addEventListener(
     "click",
@@ -15,10 +15,10 @@ document.addEventListener(
 )
 
 
-//document.addEventListener("stateChanged", event => {
-//  console.log("State of data has changed. Regenerating HTML...")
-//renderAllHTML()
-//})
+document.addEventListener("stateChanged", event => {
+ console.log("State of data has changed. Regenerating HTML...")
+renderAllHTML()
+})
 
 export const cars = () => {
     return `
@@ -40,14 +40,15 @@ export const cars = () => {
             <h2>Wheels</h2>
             ${wheels()}
             </section>
-
         </article>
+        
         <article>
-            <button id="orderButton">Create Custom Order</button>
+            <button id="orderButton">Submit Order</button>
         </article>
+        
         <article class="customOrders">
             <h2>Custom Order</h2>
-            ${Orders()}
+            ${orders()}
         </article>
     `
 }

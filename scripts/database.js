@@ -12,36 +12,38 @@ const database = {
         { id: 4, type: "Black Leather", price: 1500 }
     ],
     technology: [
-        { id: 1, package: "Basc Package (basic sound system)", price: 500 },
-        { id: 2, package: "Navigation Package (includes integrated navigaion controls", price: 1000 },
-        { id: 3, package: "Visibility Package (includes sde and rear cameras", price: 1000 },
-        { id: 4, package: "Ultra Package (includes navigation and visibility packages", price: 2000 }
+        { id: 1, tech: "Basc Package (basic sound system)", price: 500 },
+        { id: 2, tech: "Navigation Package (includes integrated navigaion controls", price: 1000 },
+        { id: 3, tech: "Visibility Package (includes sde and rear cameras", price: 1000 },
+        { id: 4, tech: "Ultra Package (includes navigation and visibility packages", price: 2000 }
     ],
-    wheels [
-        { id: 1, wheels: "17-inch Pair Radial", price: 1000 },
-        { id: 2, wheels: "17-inch Pair Radial Black", price: 1250 },
-        { id: 3, wheels: "18-inch Pair Spoke Silver", price: 2000 },
-        { id: 4, wheels: "18-inch Pair Spoke Black", price: 2000}
+    wheels: [
+        { id: 1, size: "17-inch Pair Radial", price: 1000 },
+        { id: 2, size: "17-inch Pair Radial Black", price: 1250 },
+        { id: 3, size: "18-inch Pair Spoke Silver", price: 2000 },
+        { id: 4, size: "18-inch Pair Spoke Black", price: 2000}
     ],
     
-//    customOrders: [
-//        {
-//          id: 1,
-//          paintColorId: 3,
-//          interiorId: 2,
-//          technologyId: 3,
-//          wheelsId: 2,  
-//          timestamp: 1614659931693
-        }
-    ],       
-
+   customOrders: [
+       {
+         id: 1,
+         paintColorId: 3,
+         interiorId: 2,
+         technologyId: 3,
+         wheelsId: 2,  
+         timestamp: 1614659931693
+       }
+        ],
+    
+    
     orderBuilder: [
         { 
           id: {},
-          metal: {}, 
-          size: {},
-          style: {}
-    }
+          paintColor: {}, 
+          interior: {},
+          technology: {},
+          wheels: {}
+        }
     ]
 }
     
@@ -52,14 +54,14 @@ export const getInterior = () => {
     return database.interior.map(type => ({...type}))
 }   
 export const getTechnology = () => {
-    return database.technology.map(package => ({...package}))
+    return database.technology.map(tech => ({...tech}))
 }   
 export const getWheels = () => {
     return database.wheels.map(wheels => ({...wheels}))
 }   
-//export const getCustomOrders = () => {
-//    return database.customOrders.map(customOrders => ({...customOrders}))
-//}   
+export const getCustomOrders = () => {
+   return database.customOrders.map(customOrders => ({...customOrders}))
+}   
 export const setPaintColor = (id) => {
   database.orderBuilder.paintColorId = id
 }
