@@ -31,7 +31,7 @@ const buildOrderListItem = (order) => {
 
    const foundTechnology = technology.find(
       (technology) => {
-        if (technology.id === order.technolodyId){
+        if (technology.id === order.technologyId){
         return true    
         }
     }
@@ -48,7 +48,7 @@ const buildOrderListItem = (order) => {
     }
    )
   //  let totalWheelsCost = foundWheels.price
-  const totalCost = foundWheels.price + foundInterior.price +foundPaintColor.price + foundWheels.price
+  const totalCost = foundWheels.price + foundInterior.price + foundPaintColor.price + foundTechnology.price
 
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
