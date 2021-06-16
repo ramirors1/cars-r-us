@@ -48,7 +48,7 @@ const buildOrderListItem = (order) => {
     }
    )
   //  let totalWheelsCost = foundWheels.price
-  const totalCost = foundWheels.price + foundInterior.price +foundPaintColor.price + foundWheels
+  const totalCost = foundWheels.price + foundInterior.price +foundPaintColor.price + foundWheels.price
 
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
